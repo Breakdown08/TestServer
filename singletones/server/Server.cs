@@ -1,16 +1,20 @@
 using Godot;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Numerics;
 using System.Reflection;
 using TestServer.assets.player;
 using TestServer.singletones;
+using TestServer.singletones.server;
+
 namespace TestServer.Server
 {
 	public partial class Server : Node
 	{
 		public const int PORT = 5005;
 		WebSocketServer server;
+		public Dictionary<string, BaseService> storageRP = new Dictionary<string, BaseService>();
 
 		private void RunWebsocket()
 		{
@@ -28,7 +32,7 @@ namespace TestServer.Server
 
 		private void RegisterService(BaseService service)
 		{
-			service.server = this;
+			service.Server = this;
 			AddChild(service);
 		}
 
@@ -41,11 +45,18 @@ namespace TestServer.Server
 		{
 			CollectServices();
 			RunWebsocket();
+			RPCInput(nameof(PlayerService.TestRemoteMethod));
 		}
 
 		public override void _Process(float delta)
 		{
 			server.Poll();
+		}
+
+		[Remote]
+		public void RPCInput(string methodName, params object[] args)
+		{
+			this.FindRPCMethod(methodName);
 		}
 	}
 }

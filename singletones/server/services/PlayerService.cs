@@ -18,7 +18,7 @@ namespace TestServer.Server
 		}
 
 		[Remote]
-		public void TestADADADADADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA(int id)
+		public void TestRemoteMethod(int id)
 		{
 
 		}
