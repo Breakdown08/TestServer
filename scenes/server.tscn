@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/custom_polygon/static_body_polygon.tscn" type="PackedScene" id=2]
+
+[node name="Map" type="Node2D"]
+
+[node name="Border1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1032, 559 )
+rotation = -3.14159
+polygon = PoolVector2Array( 77, 310, 81, 490, 940, 497, 943, 245, 853, 244, 851, 383, 220, 392, 216, 245, 72, 249 )
+
+[node name="Border2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2, 79 )
+polygon = PoolVector2Array( 77, 310, 81, 490, 940, 497, 943, 245, 853, 244, 851, 383, 220, 392, 216, 245, 72, 249 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 529, 244 )
