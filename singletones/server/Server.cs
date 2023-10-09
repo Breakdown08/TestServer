@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Numerics;
 using System.Reflection;
@@ -14,9 +15,10 @@ namespace TestServer.Server
 	{
 		public const int PORT = 5005;
 		WebSocketServer server;
-		public Dictionary<string, BaseService> storageRP = new Dictionary<string, BaseService>();
+		public Dictionary<string, BaseService> unreliableStorage = new Dictionary<string, BaseService>();
+        public Dictionary<string, BaseService> reliableStorage = new Dictionary<string, BaseService>();
 
-		private void RunWebsocket()
+        private void RunWebsocket()
 		{
 			server = new WebSocketServer();
 			Godot.Error error = server.Listen(PORT, null, true);
@@ -45,7 +47,6 @@ namespace TestServer.Server
 		{
 			CollectServices();
 			RunWebsocket();
-			RPCInput(nameof(PlayerService.TestRemoteMethod));
 		}
 
 		public override void _Process(float delta)
@@ -53,10 +54,10 @@ namespace TestServer.Server
 			server.Poll();
 		}
 
-		[Remote]
-		public void RPCInput(string methodName, params object[] args)
+		[RPC(MultiplayerAPI.RPCMode.AnyPeer)]
+		public void RPCInput(params object[] args)
 		{
-			this.FindRPCMethod(methodName);
+			GD.Print(args);
 		}
 	}
 }

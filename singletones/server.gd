@@ -25,15 +25,15 @@ func _ready():
 
 
 func with_multiplayerapi():
-	var server = NetworkedMultiplayerENet.new()
+	var server = ENetMultiplayerPeer.new()
 	var err =  server.create_server(port)
 	if err != OK:
 		print("Unable to start server")
 		log_to_debug("Unable to start server")
 		return
 	get_tree().network_peer = server
-	get_tree().connect("network_peer_connected", self, "_player_connected")
-	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
+	get_tree().connect("peer_connected", Callable(self, "_player_connected"))
+	get_tree().connect("peer_disconnected", Callable(self, "_player_disconnected"))
 	print("Server created")
 	log_to_debug("Server created")
 	
@@ -43,8 +43,8 @@ func _player_connected(id):
 	log_to_debug("Player connected: " + str(id))
 	
 	
-remote func instance_space_body(space_body_class):
-	var id = get_tree().get_rpc_sender_id()
+@rpc("any_peer") func instance_space_body(space_body_class):
+	var id = get_tree().get_remote_sender_id()
 	players_classes[str(id)] = str(space_body_class)
 	rpc_id(0, "instance_player", id, choose_spawn_location(), players_classes)
 	kills[str(id)] = 0
@@ -61,15 +61,15 @@ func _player_disconnected(id):
 func with_websocket():
 	is_websocket_connetcion = true
 	server = WebSocketServer.new()
-	var err = server.listen(port, PoolStringArray(), true)
+	var err = server.listen(port, PackedStringArray(), true)
 	if err != OK:
 		print("Unable to start server")
 		log_to_debug("Unable to start server")
 		set_process(false)
 		return
 	get_tree().network_peer = server
-	get_tree().connect("network_peer_connected", self, "_player_connected")
-	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
+	get_tree().connect("peer_connected", Callable(self, "_player_connected"))
+	get_tree().connect("peer_disconnected", Callable(self, "_player_disconnected"))
 	print("Server created")
 	log_to_debug("Server created")
 
@@ -87,13 +87,13 @@ func choose_spawn_location():
 	
 
 
-remote func update_transform(position, rotation, velocity):
-	var player_id = get_tree().get_rpc_sender_id()
+@rpc("any_peer") func update_transform(position, rotation, velocity):
+	var player_id = get_tree().get_remote_sender_id()
 	rpc_unreliable("update_player_transform", player_id, position, rotation, velocity)
 
 
-remote func calculate_collisions(collision_info):
-	var player_id = get_tree().get_rpc_sender_id()
+@rpc("any_peer") func calculate_collisions(collision_info):
+	var player_id = get_tree().get_remote_sender_id()
 	log_to_debug("player: " + str(player_id))
 #	log_to_debug("canMove calculate_collisions: " + str(collision_info["canMove"]))
 #	print("Player ramming")
@@ -122,22 +122,22 @@ remote func calculate_collisions(collision_info):
 		rpc_unreliable("update_player_transform_collision", player_id, -new_velocity)
 
 
-remote func player_damaged(hp):
-	var player_id = get_tree().get_rpc_sender_id()
+@rpc("any_peer") func player_damaged(hp):
+	var player_id = get_tree().get_remote_sender_id()
 	rpc("player_damaged", player_id, hp)
 	
 	
-remote func respawn_player(id):
+@rpc("any_peer") func respawn_player(id):
 	rpc("respawn_player", id, choose_spawn_location())
 
 
-remote func test_call():
+@rpc("any_peer") func test_call():
 	test_counter += 1
 	rpc("test_call", test_counter)
 
 
-remote func player_killed(killer):
-	var player_id = get_tree().get_rpc_sender_id()
+@rpc("any_peer") func player_killed(killer):
+	var player_id = get_tree().get_remote_sender_id()
 	kills[killer] += 1
 	if kills[killer] > highest:
 		highest = kills[killer]
@@ -146,7 +146,7 @@ remote func player_killed(killer):
 	rpc("player_killed", player_id)
 
 
-remote func destroy_bullet(bullet_name):
+@rpc("any_peer") func destroy_bullet(bullet_name):
 	rpc("delete_obj", bullet_name)	
 	
 	

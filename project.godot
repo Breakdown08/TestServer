@@ -6,12 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [application]
 
 config/name="TestServer"
 run/main_scene="res://scenes/server.tscn"
+config/features=PackedStringArray("4.1", "C#")
 
 [autoload]
 
@@ -19,12 +20,16 @@ Server="*res://singletones/server/Server.cs"
 
 [debug]
 
-shapes/collision/shape_color=Color( 1, 1, 1, 0.509804 )
+shapes/collision/shape_color=Color(1, 1, 1, 0.509804)
 
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
+
+[dotnet]
+
+project/assembly_name="TestServer"
 
 [global]
 

@@ -16,15 +16,14 @@ namespace TestServer.Server
 		   set 
 			{ 
 				_server = value;
-				foreach (MethodInfo method in this.GetRPCMethods())
+				foreach (MethodInfo method in this.GetReliableRPCMethods())
 				{
-					_server.storageRP.Add(method.Name, this);
+					_server.reliableStorage.Add(method.Name, this);
 				}
 			}
 		}
 
-		
-		private IEnumerable<MethodInfo> GetRPCMethods()
+		private IEnumerable<MethodInfo> GetReliableRPCMethods()
 		{
 			Type type = GetType();
 			MethodInfo[] methods = type.GetMethods()
@@ -33,7 +32,16 @@ namespace TestServer.Server
 			return methods;
 		}
 
-		public virtual void _Init() { }
+        private IEnumerable<MethodInfo> GetUnreliableRPCMethods()
+        {
+            Type type = GetType();
+            MethodInfo[] methods = type.GetMethods()
+                .Where(method => method.IsDefined(typeof(RemoteAttribute), false))
+                .ToArray();
+            return methods;
+        }
+
+        public virtual void _Init() { }
 
 		public override void _Ready()
 		{ 

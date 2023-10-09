@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-onready var polygon = $Polygon2D
+@onready var polygon = $Polygon2D
 
 func _ready():
 	# Store the polygon's global position so we can reset its position after moving its parent

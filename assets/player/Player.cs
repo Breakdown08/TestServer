@@ -2,7 +2,7 @@ using Godot;
 using System;
 using TestServer.assets.player;
 
-public class Player : RigidBody2D
+public partial class Player : RigidBody2D
 {
 	[Export]
 	float engineSpeed = 200;
