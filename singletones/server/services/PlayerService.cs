@@ -27,7 +27,7 @@ namespace TestServer.Server
 		{
 			//server.player
 			//server. = (PackedScene)GD.Load("res://assets/player/player.tscn");
-            GetTree().Connect("network_peer_connected", this, nameof(OnPlayerConnected));
+			GetTree().Connect("network_peer_connected", this, nameof(OnPlayerConnected));
 			GetTree().Connect("network_peer_disconnected", this, nameof(OnPlayerDisconnected));
 			//player = (Player)GetTree().Root.GetNode("/root/Map/Player");
 		}
