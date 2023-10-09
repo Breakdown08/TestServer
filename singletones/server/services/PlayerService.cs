@@ -25,7 +25,6 @@ namespace TestServer.Server
 
 		public override void _Init()
 		{
-			GD.Print("INIT!@!!!@");
 			//server.player
 			//server. = (PackedScene)GD.Load("res://assets/player/player.tscn");
             GetTree().Connect("network_peer_connected", this, nameof(OnPlayerConnected));
