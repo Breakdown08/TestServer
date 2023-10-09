@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.WebSockets;
 using System.Numerics;
 using System.Reflection;
 using TestServer.assets.player;
@@ -14,23 +15,11 @@ namespace TestServer.Server
 	public partial class Server : Node
 	{
 		public const int PORT = 5005;
-		WebSocketServer server;
-		public Dictionary<string, BaseService> unreliableStorage = new Dictionary<string, BaseService>();
-        public Dictionary<string, BaseService> reliableStorage = new Dictionary<string, BaseService>();
 
-        private void RunWebsocket()
-		{
-			server = new WebSocketServer();
-			Godot.Error error = server.Listen(PORT, null, true);
-			if (error != Error.Ok)
-			{
-				GD.Print(error.ToString());
-				SetProcess(false);
-				return;
-			}
-			GetTree().NetworkPeer = server;
-			GD.Print("Server created");
-		}
+		public Dictionary<string, BaseService> unreliableStorage = new Dictionary<string, BaseService>();
+		public Dictionary<string, BaseService> reliableStorage = new Dictionary<string, BaseService>();
+		WebSocketMultiplayerPeer peer;
+		public SceneMultiplayer _multiplayer = new SceneMultiplayer();
 
 		private void RegisterService(BaseService service)
 		{
@@ -40,21 +29,25 @@ namespace TestServer.Server
 
 		private void CollectServices()
 		{
-			RegisterService(new PlayerService());
+			RegisterService(new PeerService());
 		}
-		
+
+		private void Create()
+		{
+			WebSocketMultiplayerPeer peer = new WebSocketMultiplayerPeer();
+			peer.CreateServer(PORT);
+			_multiplayer.MultiplayerPeer = peer;
+			GetTree().SetMultiplayer(_multiplayer);
+			GD.Print("Server listening on ", PORT);
+		}
+
 		public override void _Ready()
 		{
 			CollectServices();
-			RunWebsocket();
+			Create();
 		}
 
-		public override void _Process(float delta)
-		{
-			server.Poll();
-		}
-
-		[RPC(MultiplayerAPI.RPCMode.AnyPeer)]
+		[Rpc]
 		public void RPCInput(params object[] args)
 		{
 			GD.Print(args);

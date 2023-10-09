@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace TestServer.singletones.server
 {
-    public static class Extentions
-    {
-        public static void FindRPCMethod(this Server.Server server, string methodName)
-        {
-            GD.Print("VISIBLE", server.storageRP[methodName]);
-        }
-    }
+	public static class Extentions
+	{
+		public static void FindRPCMethod(this Server.Server server, string methodName)
+		{
+			//GD.Print("VISIBLE", server.storageRP[methodName]);
+		}
+	}
 }

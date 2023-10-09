@@ -1,0 +1,17 @@
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.csproj.AssemblyReference.cache
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.AssemblyInfoInputs.cache
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.AssemblyInfo.cs
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.csproj.CoreCompileInputs.cache
+D:\GitHub\TestServer\.godot\mono\temp\bin\Debug\TestServer.deps.json
+D:\GitHub\TestServer\.godot\mono\temp\bin\Debug\TestServer.runtimeconfig.json
+D:\GitHub\TestServer\.godot\mono\temp\bin\Debug\TestServer.dll
+D:\GitHub\TestServer\.godot\mono\temp\bin\Debug\TestServer.pdb
+D:\GitHub\TestServer\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\GitHub\TestServer\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.csproj.CopyComplete
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.dll
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\refint\TestServer.dll
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.pdb
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\TestServer.genruntimeconfig.cache
+D:\GitHub\TestServer\.godot\mono\temp\obj\Debug\ref\TestServer.dll

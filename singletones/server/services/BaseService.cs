@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TestServer.Server
 {
-	public abstract class BaseService : Node
+	public abstract partial class BaseService : Node
 	{
 		private Server _server;
 		public Server Server 
@@ -27,7 +27,7 @@ namespace TestServer.Server
 		{
 			Type type = GetType();
 			MethodInfo[] methods = type.GetMethods()
-				.Where(method => method.IsDefined(typeof(RemoteAttribute), false))
+				.Where(method => method.IsDefined(typeof(RpcAttribute), false))
 				.ToArray();
 			return methods;
 		}
@@ -36,7 +36,7 @@ namespace TestServer.Server
         {
             Type type = GetType();
             MethodInfo[] methods = type.GetMethods()
-                .Where(method => method.IsDefined(typeof(RemoteAttribute), false))
+                .Where(method => method.IsDefined(typeof(RpcAttribute), false))
                 .ToArray();
             return methods;
         }

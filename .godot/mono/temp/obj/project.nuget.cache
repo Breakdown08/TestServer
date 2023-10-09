@@ -1,31 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kdzgklV4GwZg4nKrXlRFv5MTeq7NbOgPgxqdwReKh99e3kcWPbG1LbK01J2/DLJGuvO6/dzFLLJAy72/fjkTKw==",
-  "success": false,
+  "dgSpecHash": "4eAdzXhrWlGu7CUiBvK+621BTWbzlEk0TyouLS+pNc31Uuae8R25KGK/PElOzwvi9OGr/wJ1otbruanRiLkE3A==",
+  "success": true,
   "projectFilePath": "D:\\GitHub\\TestServer\\TestServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\godot.sourcegenerators\\4.1.2\\godot.sourcegenerators.4.1.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\godotsharp\\4.1.2\\godotsharp.4.1.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\godotsharpeditor\\4.1.2\\godotsharpeditor.4.1.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1202",
-      "level": "Error",
-      "message": "Пакет GodotSharpEditor 4.1.2 несовместим с net472 (.NETFramework,Version=v4.7.2). Пакет GodotSharpEditor 4.1.2 поддерживает: net6.0 (.NETCoreApp,Version=v6.0)",
-      "libraryId": "GodotSharpEditor",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2"
-      ]
-    },
-    {
-      "code": "NU1202",
-      "level": "Error",
-      "message": "Пакет GodotSharp 4.1.2 несовместим с net472 (.NETFramework,Version=v4.7.2). Пакет GodotSharp 4.1.2 поддерживает: net6.0 (.NETCoreApp,Version=v6.0)",
-      "libraryId": "GodotSharp",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2"
-      ]
-    }
-  ]
+  "logs": []
 }
