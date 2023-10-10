@@ -15,20 +15,13 @@ namespace TestServer.Server
 	public partial class Server : Node
 	{
 		public const int PORT = 5005;
-		public Dictionary<string, BaseService> serviceStorage = new Dictionary<string, BaseService>();
 		WebSocketMultiplayerPeer peer;
 		public SceneMultiplayer _multiplayer = new SceneMultiplayer();
-
-		private void RegisterService(BaseService service)
-		{
-			service.Server = this;
-			serviceStorage.Add(nameof(service), service);
-			AddChild(service);
-		}
+		public List<object> services = new List<object> { };
 
 		private void CollectServices()
 		{
-			RegisterService(new PeerService());
+			services.Add(new PeerService(this));
 		}
 
 		private void Create()
@@ -42,13 +35,8 @@ namespace TestServer.Server
 
 		public override void _Ready()
 		{
-			CollectServices();
 			Create();
-			foreach (var item in serviceStorage)
-			{
-				GD.Print(item);
-			}
-			
+			CollectServices();
 		}
 	}
 }

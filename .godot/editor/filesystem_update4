@@ -1,7 +1,5 @@
 res://scenes/server.tscn
 res://assets/player/Player.cs
-res://singletones/server/new_script.cs
 res://singletones/server/Server.cs
 res://singletones/server/services/BaseService.cs
 res://singletones/server/services/PeerService.cs
-res://singletones/server/Extentions.cs

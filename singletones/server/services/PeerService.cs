@@ -13,17 +13,18 @@ namespace TestServer.Server
 		[Rpc]
 		public void RPCInput(params object[] args)
 		{
-			const string service = nameof(PeerService);
-			string result = serviceStorage.GetField<string>(service, nameof(PeerService.peerServiceVariable));
-			GD.Print(result);
+			GD.Print("RPC IS WORKING!");
+			GD.Print(PeerService.Instance.peerServiceVariable);
 		}
 	}
 
-
-	public partial class PeerService : BaseService
+	public class PeerService : BaseService<PeerService>
 	{
 		public string peerServiceVariable = "SOME_DATA";
-		private void OnPeerConnected(long id)
+
+        public PeerService(Server server) : base(server) { }
+
+        private void OnPeerConnected(long id)
 		{
 			GD.Print("Peer connected: ", id);
 		}
@@ -43,8 +44,13 @@ namespace TestServer.Server
 			Server._multiplayer.PeerConnected += OnPeerConnected;
 			Server._multiplayer.PeerDisconnected += OnPeerDisconnected;
 			Server._multiplayer.PeerPacket += OnPacketReceived;
-			//server. = (PackedScene)GD.Load("res://assets/player/player.tscn");
-			//player = (Player)GetTree().Root.GetNode("/root/Map/Player");
 		}
 	}
 }
+
+
+
+
+
+//server. = (PackedScene)GD.Load("res://assets/player/player.tscn");
+//player = (Player)GetTree().Root.GetNode("/root/Map/Player");

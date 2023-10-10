@@ -7,18 +7,17 @@ using System.Runtime.CompilerServices;
 
 namespace TestServer.Server
 {
-	public abstract partial class BaseService : Node
+	public abstract class BaseService<T> where T: BaseService<T>
 	{
-		public Server Server { get; set; }
-        public static BaseService Instance { get; private set; }
-        public virtual void _Init() { }
-		public override void _Ready()
+		public static T Instance { get; private set; }
+		public Server Server { get; private set; }
+		public virtual void _Init() { }
+		public BaseService(Server server) 
 		{
-			Instance = this;
+			Server = server;
+            Instance = (T)this;
 			_Init();
 		}
 	}
-
-
 }
 
