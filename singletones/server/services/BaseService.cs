@@ -10,11 +10,11 @@ namespace TestServer.Server
 	public abstract partial class BaseService : Node
 	{
 		public Server Server { get; set; }
-
-		public virtual void _Init() { }
-
+        public static BaseService Instance { get; private set; }
+        public virtual void _Init() { }
 		public override void _Ready()
-		{ 
+		{
+			Instance = this;
 			_Init();
 		}
 	}
