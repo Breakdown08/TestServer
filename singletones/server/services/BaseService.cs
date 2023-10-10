@@ -10,11 +10,11 @@ namespace TestServer.Server
 	public abstract partial class BaseService : Node
 	{
 		private Server _server;
-		public Server Server 
-		{ 
-		   get { return _server; }
-		   set 
-			{ 
+		public Server Server
+		{
+			get { return _server; }
+			set
+			{
 				_server = value;
 				foreach (MethodInfo method in this.GetReliableRPCMethods())
 				{
@@ -32,16 +32,16 @@ namespace TestServer.Server
 			return methods;
 		}
 
-        private IEnumerable<MethodInfo> GetUnreliableRPCMethods()
-        {
-            Type type = GetType();
-            MethodInfo[] methods = type.GetMethods()
-                .Where(method => method.IsDefined(typeof(RpcAttribute), false))
-                .ToArray();
-            return methods;
-        }
+		private IEnumerable<MethodInfo> GetUnreliableRPCMethods()
+		{
+			Type type = GetType();
+			MethodInfo[] methods = type.GetMethods()
+				.Where(method => method.IsDefined(typeof(RpcAttribute), false))
+				.ToArray();
+			return methods;
+		}
 
-        public virtual void _Init() { }
+		public virtual void _Init() { }
 
 		public override void _Ready()
 		{ 

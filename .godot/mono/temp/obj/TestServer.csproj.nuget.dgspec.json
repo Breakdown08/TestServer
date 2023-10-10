@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\TestServer\\TestServer.csproj": {}
+    "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\TestServer\\TestServer.csproj": {
+    "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\TestServer\\TestServer.csproj",
+        "projectUniqueName": "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj",
         "projectName": "TestServer",
-        "projectPath": "D:\\GitHub\\TestServer\\TestServer.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\TestServer\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj",
+        "packagesPath": "C:\\Users\\Kirill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kirill\\Downloads\\TestServer\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kirill\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

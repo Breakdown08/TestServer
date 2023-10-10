@@ -15,15 +15,16 @@ namespace TestServer.Server
 	public partial class Server : Node
 	{
 		public const int PORT = 5005;
-
 		public Dictionary<string, BaseService> unreliableStorage = new Dictionary<string, BaseService>();
 		public Dictionary<string, BaseService> reliableStorage = new Dictionary<string, BaseService>();
+		public Dictionary<string, BaseService> serviceStorage = new Dictionary<string, BaseService>();
 		WebSocketMultiplayerPeer peer;
 		public SceneMultiplayer _multiplayer = new SceneMultiplayer();
 
 		private void RegisterService(BaseService service)
 		{
 			service.Server = this;
+			serviceStorage.Add(nameof(service), service);
 			AddChild(service);
 		}
 
@@ -45,12 +46,11 @@ namespace TestServer.Server
 		{
 			CollectServices();
 			Create();
-		}
-
-		[Rpc]
-		public void RPCInput(params object[] args)
-		{
-			GD.Print(args);
+			foreach (var item in serviceStorage)
+			{
+				GD.Print(item);
+			}
+			
 		}
 	}
 }

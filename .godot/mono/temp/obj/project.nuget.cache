@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4eAdzXhrWlGu7CUiBvK+621BTWbzlEk0TyouLS+pNc31Uuae8R25KGK/PElOzwvi9OGr/wJ1otbruanRiLkE3A==",
+  "dgSpecHash": "F27WfJ3DGPpNegza3C82CJW2r1n09anxfDCl8VPrlz6wrR/WI/gRjvLjl4IAxwstUpW5+/m4eWE5FY1md7uN7g==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\TestServer\\TestServer.csproj",
+  "projectFilePath": "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\user\\.nuget\\packages\\godot.sourcegenerators\\4.1.2\\godot.sourcegenerators.4.1.2.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\godotsharp\\4.1.2\\godotsharp.4.1.2.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\godotsharpeditor\\4.1.2\\godotsharpeditor.4.1.2.nupkg.sha512"
+    "C:\\Users\\Kirill\\.nuget\\packages\\godot.sourcegenerators\\4.1.2\\godot.sourcegenerators.4.1.2.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\godotsharp\\4.1.2\\godotsharp.4.1.2.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\godotsharpeditor\\4.1.2\\godotsharpeditor.4.1.2.nupkg.sha512"
   ],
   "logs": []
 }
