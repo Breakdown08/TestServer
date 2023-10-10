@@ -14,14 +14,11 @@ namespace TestServer.Server
 		public void RPCInput(params object[] args)
 		{
 			GD.Print("RPC IS WORKING!");
-			GD.Print(PeerService.Instance.peerServiceVariable);
 		}
 	}
 
 	public class PeerService : BaseService<PeerService>
 	{
-		public string peerServiceVariable = "SOME_DATA";
-
 		public PeerService(Server server) : base(server) { }
 
 		private void OnPeerConnected(long id)
@@ -47,10 +44,3 @@ namespace TestServer.Server
 		}
 	}
 }
-
-
-
-
-
-//server. = (PackedScene)GD.Load("res://assets/player/player.tscn");
-//player = (Player)GetTree().Root.GetNode("/root/Map/Player");

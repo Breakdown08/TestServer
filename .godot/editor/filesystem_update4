@@ -1,5 +1,10 @@
 res://scenes/server.tscn
 res://assets/player/Player.cs
 res://singletones/server/Server.cs
+res://singletones/server/services/new_script.cs
 res://singletones/server/services/BaseService.cs
+res://assets/player/player.tscn
+res://singletones/EventBus.cs
+res://assets/space_ship/EngineThrustEnum.cs
+res://assets/space_ship/YawEnum.cs
 res://singletones/server/services/PeerService.cs

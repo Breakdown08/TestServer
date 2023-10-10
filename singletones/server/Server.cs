@@ -21,7 +21,9 @@ namespace TestServer.Server
 
 		private void CollectServices()
 		{
+			AddChild(new EventBus());
 			services.Add(new PeerService(this));
+			services.Add(new PlayerService(this));
 		}
 
 		private void Create()

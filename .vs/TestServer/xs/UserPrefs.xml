@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="singletones/server/services/BaseService.cs">
+    <Files>
+      <File FileName="singletones/server/Server.cs" Line="6" Column="15" />
+      <File FileName="singletones/server/services/new_script.cs" Line="2" Column="7" />
+      <File FileName="singletones/server/services/BaseService.cs" Line="1" Column="9" />
+      <File FileName="singletones/server/services/PeerService.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TestServer" expanded="True">
+            <Node name="TestServer" expanded="True">
+              <Node name="Dependencies" expanded="True" selected="True" />
+              <Node name="singletones" expanded="True">
+                <Node name="server" expanded="True">
+                  <Node name="services" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

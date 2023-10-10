@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://da8m3liu0pbyq"]
 
-[ext_resource type="PackedScene" path="res://assets/player/player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://doev2a6bk8xyr" path="res://assets/player/player.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://assets/custom_polygon/static_body_polygon.tscn" id="2"]
 
 [node name="Map" type="Node2D"]
