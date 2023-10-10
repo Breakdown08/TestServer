@@ -15,8 +15,6 @@ namespace TestServer.Server
 	public partial class Server : Node
 	{
 		public const int PORT = 5005;
-		public Dictionary<string, BaseService> unreliableStorage = new Dictionary<string, BaseService>();
-		public Dictionary<string, BaseService> reliableStorage = new Dictionary<string, BaseService>();
 		public Dictionary<string, BaseService> serviceStorage = new Dictionary<string, BaseService>();
 		WebSocketMultiplayerPeer peer;
 		public SceneMultiplayer _multiplayer = new SceneMultiplayer();
