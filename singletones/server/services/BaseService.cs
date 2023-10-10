@@ -15,7 +15,7 @@ namespace TestServer.Server
 		public BaseService(Server server) 
 		{
 			Server = server;
-            Instance = (T)this;
+			Instance = (T)this;
 			_Init();
 		}
 	}

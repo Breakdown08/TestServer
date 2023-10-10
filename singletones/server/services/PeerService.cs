@@ -22,9 +22,9 @@ namespace TestServer.Server
 	{
 		public string peerServiceVariable = "SOME_DATA";
 
-        public PeerService(Server server) : base(server) { }
+		public PeerService(Server server) : base(server) { }
 
-        private void OnPeerConnected(long id)
+		private void OnPeerConnected(long id)
 		{
 			GD.Print("Peer connected: ", id);
 		}
