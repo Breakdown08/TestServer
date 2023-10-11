@@ -18,16 +18,28 @@ namespace TestServer.Server
 	{
 		public PlayerService(Server server) : base(server) { }
 
-		public Dictionary<int, Player> PlayerList { get; set;}
+		Dictionary<long, Player> playerList = new Dictionary<long, Player>();
 
-		public void OnEngineThrustChanged(int idPeer)
+		private void OnEngineThrustChanged(long idPeer)
 		{
 			
 		}
 
-		public override void _Init()
+		public void CreatePlayer(long idPeer)
+		{
+			//playerList.Add(idPeer, new PolygonRigidBody2D());
+		}
+
+        public void RemovePlayer(long idPeer)
+        {
+			playerList.Remove(idPeer);
+        }
+
+        public override void _Init()
 		{
 			EventBus.Instance.EngineThrust += OnEngineThrustChanged;
+			Server._multiplayer.PeerConnected += CreatePlayer;
+			Server._multiplayer.PeerDisconnected += RemovePlayer;
 		}
 	}
 }

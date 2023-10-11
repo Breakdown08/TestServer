@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net7.0": {
       "Godot.SourceGenerators/4.1.2": {
         "type": "package",
         "build": {
@@ -81,36 +81,43 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net7.0": [
       "Godot.SourceGenerators >= 4.1.2",
       "GodotSharp >= 4.1.2",
       "GodotSharpEditor >= 4.1.2"
     ]
   },
   "packageFolders": {
-    "/home/breakdown/.nuget/packages/": {}
+    "C:\\Users\\Kirill\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/breakdown/Media/work/GodotProjects/TestServer/TestServer.csproj",
+      "projectUniqueName": "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj",
       "projectName": "TestServer",
-      "projectPath": "/media/breakdown/Media/work/GodotProjects/TestServer/TestServer.csproj",
-      "packagesPath": "/home/breakdown/.nuget/packages/",
-      "outputPath": "/media/breakdown/Media/work/GodotProjects/TestServer/.godot/mono/temp/obj/",
+      "projectPath": "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj",
+      "packagesPath": "C:\\Users\\Kirill\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kirill\\Downloads\\TestServer\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/breakdown/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Kirill\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {}
         }
       },
@@ -121,8 +128,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "dependencies": {
           "Godot.SourceGenerators": {
             "target": "Package",
@@ -148,22 +155,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.22, 6.0.22]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.22, 6.0.22]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.111/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

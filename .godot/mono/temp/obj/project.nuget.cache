@@ -1,14 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "86C9O8zubAoveQbFpgLyXtKxky5jz9omBUNShchs54veDYHgGgrW4fl43s47J5hsUqBxjTXgAz6VKtTQrWJtAA==",
+  "dgSpecHash": "Th5kmY2V38YInHdC0PFInvWe97yIv+Zp6xSJmyZn2rMqgrt8HbyDhoIoHeB6iWThSqJntkY7OnFpEgOl3BN4nQ==",
   "success": true,
-  "projectFilePath": "/media/breakdown/Media/work/GodotProjects/TestServer/TestServer.csproj",
+  "projectFilePath": "C:\\Users\\Kirill\\Downloads\\TestServer\\TestServer.csproj",
   "expectedPackageFiles": [
-    "/home/breakdown/.nuget/packages/godot.sourcegenerators/4.1.2/godot.sourcegenerators.4.1.2.nupkg.sha512",
-    "/home/breakdown/.nuget/packages/godotsharp/4.1.2/godotsharp.4.1.2.nupkg.sha512",
-    "/home/breakdown/.nuget/packages/godotsharpeditor/4.1.2/godotsharpeditor.4.1.2.nupkg.sha512",
-    "/home/breakdown/.nuget/packages/microsoft.netcore.app.ref/6.0.22/microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
-    "/home/breakdown/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.22/microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512"
+    "C:\\Users\\Kirill\\.nuget\\packages\\godot.sourcegenerators\\4.1.2\\godot.sourcegenerators.4.1.2.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\godotsharp\\4.1.2\\godotsharp.4.1.2.nupkg.sha512",
+    "C:\\Users\\Kirill\\.nuget\\packages\\godotsharpeditor\\4.1.2\\godotsharpeditor.4.1.2.nupkg.sha512"
   ],
   "logs": []
 }

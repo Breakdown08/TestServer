@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name PolygonRigidBody2D
 
 @onready var polygon = $Polygon2D
 

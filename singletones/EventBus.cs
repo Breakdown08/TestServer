@@ -5,7 +5,7 @@ public partial class EventBus : Node
 {
 
 [Signal]
-public delegate void EngineThrustEventHandler(int idPeer);
+public delegate void EngineThrustEventHandler(long idPeer);
 /*
 signal engine_stopped(action) #тяга двигателя отключена
 signal engine_reverse_thrusted(action) #обратная тяга двигателя активна

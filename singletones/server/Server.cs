@@ -12,7 +12,8 @@ using TestServer.singletones.server;
 
 namespace TestServer.Server
 {
-	public partial class Server : Node
+    [GodotClassName("SuperServero4ek")]
+    public partial class Server : Node
 	{
 		public const int PORT = 5005;
 		WebSocketMultiplayerPeer peer;

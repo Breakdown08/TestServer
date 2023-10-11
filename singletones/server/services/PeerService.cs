@@ -23,7 +23,7 @@ namespace TestServer.Server
 
 		private void OnPeerConnected(long id)
 		{
-			GD.Print("Peer connected: ", id);
+			
 		}
 
 		private void OnPeerDisconnected(long id)
